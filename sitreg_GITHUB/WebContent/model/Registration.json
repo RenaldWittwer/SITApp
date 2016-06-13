@@ -1,0 +1,16 @@
+{
+         "RegistrationID":"",
+         "DateTime":"",
+         "Name":"",
+         "LinkToBio":"",
+         "Twitter":"",
+         "FridayEvent": 1,
+         "SaturdayEvent": 1,
+         "Email":"",
+         "Phone":"",
+         "Receipt": 1,
+         "Address":"",
+         "Company":"",
+         "Relation":"Other",
+         "Captcha":""
+}
