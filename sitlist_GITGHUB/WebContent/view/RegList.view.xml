@@ -1,0 +1,155 @@
+<mvc:View
+	controllerName="incon.sitreg.controller.RegList"
+	xmlns:core="sap.ui.core"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:l="sap.ui.layout"
+	xmlns:commons="sap.ui.commons" 
+	xmlns:t="sap.ui.table">
+	<Page class="sapUiResponsiveContentPadding">
+	  <customHeader>
+	    <Toolbar>
+	      <Button icon="sap-icon://nav-back" text="Back to Wiki" press="onBackToWiki" />
+	      <ToolbarSpacer/>
+	      <Title text="{i18n>homePageTitle}" level="H2"/>
+	      <ToolbarSpacer/>
+	    </Toolbar>
+ 	  </customHeader>
+		
+		<content>
+
+	          <FlexBox justifyContent="Center">
+	            <Image src="./image/sitHH2016.jpg" />
+	          </FlexBox>
+
+				    <sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" editable="false" layout="ResponsiveGridLayout" maxContainerCols="1" columnsL="1" columnsXL="1" id="__form0">
+				        <sap.ui.layout.form:content>
+				    
+				    <core:Title text="Registrations"/>  
+  
+          			<t:Table
+				       id="idRegistration"
+				       selectionMode="None"
+				       rows="{Registrations>/registrations}"
+				       visibleRowCount="60"
+				       showColumnVisibilityMenu="false"
+				       enableColumnFreeze="false"
+				       enableCellFilter="true"
+				       width="1150px">
+
+				         <t:Column
+						    width="60px"					         
+ 						    filterProperty="No"
+						    resizable="false"
+						    autoResizable="true">
+						    <Label text="No" />
+					  	  <t:template>
+							  <Text text="{Registrations>RegistrationID}"/>
+						  </t:template>
+				  	   </t:Column>  
+									     					
+				         <t:Column
+						    width="380px"				         
+ 						    filterProperty="Name"
+						    resizable="true"
+						    autoResizable="true">
+						    <Label text="Name" />
+						<t:template>
+							<Text text="{Registrations>Name}"/>
+						</t:template>
+					</t:Column>   
+                
+					<t:Column
+						width="200px"
+						flexible="false"
+						resizable="false">
+						<Label text="Link To Bio" />
+						<t:template>
+							<Link text="Show Bio" href="{Registrations>LinkToBio}" target="_blank"/>
+						</t:template>
+					</t:Column>     
+					
+					<t:Column
+						width="280px"
+						flexible="false"
+						resizable="false">
+						<Label text="Twitter" />
+						<t:template>
+							<Link text="{Registrations>Twitter}" href="https://twitter.com/{Registrations>Twitter}" target="_blank"/>
+						</t:template>
+					</t:Column>               
+
+				    <t:Column
+						    width="120px"				         
+						    resizable="false"
+						    autoResizable="true">
+						    <Label text="Friday Event" />
+						<t:template>
+							<Text text="{
+							        path: 'Registrations>FridayEvent',
+							        formatter: 'incon.sitreg.util.Formatter.eventText'}"/>
+						</t:template>
+					</t:Column> 
+
+				    <t:Column
+						    width="120px"				         
+						    resizable="false"
+						    autoResizable="true">
+						    <Label text="Saturday Event" />
+						<t:template>
+							<Text text="{
+							        path: 'Registrations>SaturdayEvent',
+							        formatter: 'incon.sitreg.util.Formatter.eventText'}"/>
+						</t:template>
+					</t:Column> 					
+                
+                   </t:Table>
+                  
+			    <core:Title text="Waitinglist"/> 
+          			<t:Table
+				       id="idWaitingList"
+				       selectionMode="None"
+				       rows="{Waitinglist>/waitingList}"
+
+				       showColumnVisibilityMenu="false"
+				       enableColumnFreeze="false"
+				       enableCellFilter="true"
+				       width="400px">
+
+				         <t:Column
+						    width="20px"					         
+ 						    filterProperty="No"
+						    resizable="false"
+						    autoResizable="true">
+						    <Label text="No" />
+					  	  <t:template>
+							  <Text text="{Waitinglist>RegistrationID}"/>
+						  </t:template>
+				  	   </t:Column>  
+									     					
+				         <t:Column
+						    width="100px"				         
+ 						    filterProperty="Name"
+						    resizable="true"
+						    autoResizable="true">
+						    <Label text="Name" />
+						<t:template>
+							<Text text="{Waitinglist>Name}"/>
+						</t:template>
+					</t:Column>   
+ 
+                   </t:Table>
+
+  	             </sap.ui.layout.form:content>
+			</sap.ui.layout.form:SimpleForm>	
+				    
+		</content>	
+		
+		<footer>
+		    <Bar>
+
+		    </Bar>
+	    </footer>
+	    
+	</Page>
+</mvc:View>

@@ -1,0 +1,83 @@
+<mvc:View
+	controllerName="incon.sitreg.controller.Register"
+	xmlns:core="sap.ui.core"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:l="sap.ui.layout" >
+	<Page title="{i18n>homePageTitle}" class="sapUiResponsiveContentPadding">
+		<content>
+
+	          <FlexBox justifyContent="Center">
+	            <Image src="./image/sitHH2016.jpg" />
+	          </FlexBox>
+
+				    <sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" editable="false" layout="ResponsiveGridLayout" id="__form0">
+				        <sap.ui.layout.form:content>
+			
+				            <core:Title text="Visibile Information for everybody"/> 
+				            <Label text="{i18n>lblName}" id="lblName"/>
+				            <Input value="{/Name}" width="350px" id="Name" placeholder="{i18n>phName}"/>
+				            <Label text="{i18n>lblLinkToBio}" id="lblBio"/>
+				            <Input value="{/LinkToBio}" width="350px" id="LinkToBio" placeholder="{i18n>phLinkToBio}"/>
+				            <Label text="{i18n>lblTwitter}" id="lblTwitter" />
+				            <Input value="{/Twitter}" width="350px" id="Twitter" placeholder="{i18n>phTwitter}"/>
+				            <Label text="Friday Event" id="lblFridayEvent"/>
+				              <RadioButtonGroup id="FridayEvent" columns="3" selectedIndex="{/FridayEvent}">
+				                <buttons>
+					            <RadioButton text="Yes" />
+					            <RadioButton text="Maybe" />
+					            <RadioButton text="No" />
+					            </buttons>
+					          </RadioButtonGroup>  
+				            <Label text="Saturday Event" id="lblSaturdayEvent"/>
+				              <RadioButtonGroup id="SaturdayEvent" columns="3" selectedIndex="{/SaturdayEvent}">
+				                <buttons>
+					            <RadioButton text="Yes" />
+					            <RadioButton text="Maybe" />
+					            <RadioButton text="No" />
+					            </buttons>
+					          </RadioButtonGroup>  
+				            				            
+				            <core:Title text="Only for Organizers visible"/> 
+				            <Label text="{i18n>lblEmail}" type="Email" id="lblEmail"/>
+				            <Input value="{/Email}" width="350px" id="Email" placeholder="{i18n>phEmail}"/>
+				            <Label text="{i18n>lblPhone}" id="lblPhone"/>
+				            <Input value="{/Phone}" width="350px" id="Phone" placeholder="{i18n>phPhone}"/>				            				            
+				            <Label text="Relation to SAP" id="lblRelation"/>
+                            <ComboBox value="{/Relation}" width="350px">
+                              <items>
+                                <core:Item text="Other"/>
+                                <core:Item text="Customer"/> 
+                                <core:Item text="Partner"/>
+                                <core:Item text="Mentor"/>
+                                <core:Item text="SAP Employee"/>
+                                <core:Item text="Ind. Consultant"/>
+                                <core:Item text="Student"/>                                                                                                                                     
+                              </items>                            
+                            </ComboBox> 
+				            <Label text="Receipt" id="lblReceipt"/>
+				            <CheckBox selected="{/Receipt}" id="Receipt" text="Do you whish a receipt?"/>
+				            <Label text="{i18n>lblAddress}" id="lblAddress"/>
+				            <TextArea value="{/Address}" width="350px" id="Address" rows="5"/>
+				            <Label text="{i18n>lblCompany}" id="lblCompany"/>
+				            <Input value="{/Company}" width="350px" id="Company"/>
+
+				            <core:Title text="Security Question"/> 
+				            <Text text="Please input the 5 Items number to avoid automatic or manipulative registration" /> 
+	                        <Image src="./image/captcha.php" width="140px" height="40px" />
+	                        <Input value="{/Captcha}" width="150px" id="Captcha"/>
+	                        				            			 			            				            				            				            
+				            </sap.ui.layout.form:content>
+				    </sap.ui.layout.form:SimpleForm>	
+		</content>
+		
+		<footer>
+		    <Bar>
+		      <contentRight>
+		        <Button id="btnRegister" text="Register" type="Accept" press="onInsertReg"/>
+		      </contentRight>
+		    </Bar>
+	    </footer>
+	    
+	</Page>
+</mvc:View>

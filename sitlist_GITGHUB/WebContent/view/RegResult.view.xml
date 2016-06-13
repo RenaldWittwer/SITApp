@@ -1,0 +1,27 @@
+<mvc:View
+	controllerName="incon.sitreg.controller.RegResult"
+	xmlns:core="sap.ui.core"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:l="sap.ui.layout" >
+	<Page title="{i18n>homePageTitle}" class="sapUiResponsiveContentPadding">
+		<content>
+
+	          <FlexBox justifyContent="Center">
+	            <Image src="./image/sitHH2016.jpg" />
+	          </FlexBox>
+
+			  <sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" editable="false" layout="ResponsiveGridLayout" id="__form0">
+				 <sap.ui.layout.form:content>
+				        
+              <Text textAlign="Center"
+                    text="Congratulation! You are successfully registered for SAP Inside Track Hamburg 2016!" />
+
+			    </sap.ui.layout.form:content>
+	          </sap.ui.layout.form:SimpleForm>	
+				    
+		</content>
+		
+    
+	</Page>
+</mvc:View>
